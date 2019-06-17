@@ -79,6 +79,12 @@ void TFT22LCD_Color_Fill1(unsigned int x1, unsigned int y1, unsigned int x2, uns
 
 void testfill(void);
 
+/////////////////spi master///////////////////////
+void TFT32lcdspi_flush(int32_t x1, int32_t y1, int32_t x2, int32_t y2, const lv_color_t * color_map);
+void drawPixel(int16_t x, int16_t y, uint16_t color);
+void fill_color(int16_t x0, int16_t y0, int16_t x1, int16_t y1,uint16_t color);
 
+void lcdspi_init();
+//////////////////////////////////
 
 #endif

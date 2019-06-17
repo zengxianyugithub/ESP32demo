@@ -24,7 +24,7 @@
 #include "bt_app_av.h"
 
 
-LV_IMG_DECLARE(default_cover);
+//LV_IMG_DECLARE(default_cover);
 LV_FONT_DECLARE(hansans_20_cn);
 LV_FONT_DECLARE(hansans_20_jp);
 
@@ -291,7 +291,7 @@ void drawLibrary() {
 void drawPlaying() {
 
 	img_cover = lv_img_create(screen, NULL);
-	lv_img_set_src(img_cover, &default_cover);
+	//lv_img_set_src(img_cover, &default_cover);
 	lv_obj_set_pos(img_cover, 15, 15);
 	lv_obj_set_size(img_cover, 128, 128);
 

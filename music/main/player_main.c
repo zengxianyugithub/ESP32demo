@@ -184,23 +184,25 @@ void app_main() {
   ESP_LOGI(TAG, "Mount spiffs succeeded.");
   */
   //sdcard init
-  sdmmc_mount(&card);
+  ///////////sdmmc_mount(&card);
 
   //littlevgl init
   lv_init();
-  Lcd_Init();	 //液晶屏--初始化配置
-	Lcd_Clear(GRAY1);//清屏
+  ////Lcd_Init();	 //液晶屏--初始化配置
+////	Lcd_Clear(GRAY1);//清屏
+lcdspi_init();
 	//testfill();
 	//Gui_Circle(64,64,20,GRAY1);
 	// Gui_DrawFont_GBK16(0,16,RED,GRAY0,(unsigned char *)arr);
    //Gui_DrawFont_GBK16(0,32,GREEN,GRAY0,(unsigned char *)"ceshi");	 
 	//Gui_DrawFont_GBK16(0,48,BLUE,GRAY0,(unsigned char *)"mcudev.taobao.com"); 
-	vTaskDelay(1000 / portTICK_RATE_MS);
-	Lcd_Clear(RED);//清屏
+	//vTaskDelay(1000 / portTICK_RATE_MS);
+	//Lcd_Clear(RED);//清屏
 	 
   lv_disp_drv_t disp;
   lv_disp_drv_init(&disp);
-  disp.disp_flush = TFT22lcd_flush;
+  ////disp.disp_flush = TFT22lcd_flush;
+  disp.disp_flush = TFT32lcdspi_flush;
   lv_disp_drv_register(&disp);
   
 	vTaskDelay(50 / portTICK_RATE_MS);
@@ -281,13 +283,13 @@ void app_main() {
 	
   //i2s init
   //i2s_init();
- //  blesink_i2s_init();
+  //  blesink_i2s_init();
 
   //  player_pause(false);
 
   //  playerState.started = true;
  //蓝牙初始化
- //	ble_a2dp_sinkinit();
+ 	//ble_a2dp_sinkinit();
 
   /*
   if(xTaskCreatePinnedToCore(taskPlay, "taskPlay", 10240, NULL, 3, NULL, tskNO_AFFINITY)== pdPASS)

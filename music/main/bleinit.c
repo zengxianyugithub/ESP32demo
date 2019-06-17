@@ -126,8 +126,8 @@ void blesink_i2s_init(void)
 #else
     i2s_pin_config_t pin_config = {
         .bck_io_num = 26,
-        .ws_io_num = 25,
-        .data_out_num = 22,
+        .ws_io_num = 22,
+        .data_out_num = 25,
         .data_in_num = -1                                                       //Not used
     };
 
